@@ -3,6 +3,7 @@
 #define FURNITURE_DEFS_H
 
 #include <stdint.h>
+#include "sprites_defs.h"
 
 // Типы материалов, которые используются для изготовления мебели
 typedef enum {
@@ -70,6 +71,7 @@ typedef struct {
   t_material material;      // Требуемый материал
   t_furniture_style style;  // Стиль мебели, в котором используется эта часть
   t_part_type type;         // Тип детали
+  t_sprite_id sprite;
 } t_part;
 
 // ID всех доступных деталей (индекс для массива available_parts)
@@ -162,5 +164,7 @@ typedef enum {
   SCHEME_CANOPIED_BED,                // Кровать с балдахином
   NUM_SCHEMES                         // Общее количество схем
 } t_furniture_scheme_id;
+
+extern const t_furniture_scheme furniture_schemes[NUM_SCHEMES];
 
 #endif // FURNITURE_DEFS_H

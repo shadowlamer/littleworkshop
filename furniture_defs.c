@@ -8,7 +8,8 @@ const t_part available_parts[NUM_PARTS] = {
     .name = "простая деревянная ножка",
     .material = MAT_WOOD,
     .style = STYLE_SIMPLE,
-    .type = PART_LEG
+    .type = PART_LEG,
+    .sprite = SPRITE_SIMPLE_WOODEN_LEG  
   },
   [PART_SIMPLE_WOODEN_BACK] = {
     .name = "простая деревянная спинка",
@@ -316,7 +317,7 @@ const t_assembly_part sturdy_stool_parts[] = {
 };
 
 // Классический офисный стул (на 4 стула: по 9 частей каждый — но здесь один экземпляр)
-const t_assembly_part office_chair_parts[] = {
+const static t_assembly_part office_chair_parts[] = {
   { .part_id = PART_OFFICE_WOODEN_LEG,       .x = 10, .y = 100 },
   { .part_id = PART_OFFICE_WOODEN_LEG,       .x = 30, .y = 100 },
   { .part_id = PART_OFFICE_WOODEN_LEG,       .x = 10, .y = 120 },
@@ -329,7 +330,7 @@ const t_assembly_part office_chair_parts[] = {
 };
 
 // Резная кровать (каркас слева/справа, изголовье, изножье, основание, резные украшения)
-const t_assembly_part artistic_bed_parts[] = {
+const static t_assembly_part artistic_bed_parts[] = {
   { .part_id = PART_ARTISTIC_FRAME_LEFT,        .x = 10, .y = 50 },
   { .part_id = PART_ARTISTIC_FRAME_RIGHT,       .x = 150, .y = 50 },
   { .part_id = PART_ARTISTIC_HEADBOARD,         .x = 80, .y = 30 },
@@ -342,7 +343,7 @@ const t_assembly_part artistic_bed_parts[] = {
 };
 
 // Детский стульчик (4 ножки, сиденье, спинка, защитные уголки)
-const t_assembly_part child_chair_parts[] = {
+const static t_assembly_part child_chair_parts[] = {
   { .part_id = PART_CHILD_LEG,           .x = 10, .y = 100 },
   { .part_id = PART_CHILD_LEG,           .x = 30, .y = 100 },
   { .part_id = PART_CHILD_LEG,           .x = 10, .y = 120 },
@@ -356,7 +357,7 @@ const t_assembly_part child_chair_parts[] = {
 };
 
 // Стул с подлокотниками (4 ножки, сиденье, спинка, подлокотники)
-const t_assembly_part elegant_armchair_parts[] = {
+const static t_assembly_part elegant_armchair_parts[] = {
   { .part_id = PART_ELEGANT_LEG,         .x = 10, .y = 100 },
   { .part_id = PART_ELEGANT_LEG,         .x = 30, .y = 100 },
   { .part_id = PART_ELEGANT_LEG,         .x = 10, .y = 120 },
@@ -368,7 +369,7 @@ const t_assembly_part elegant_armchair_parts[] = {
 };
 
 // Магическая скамья (2 ножки, сиденье, спинка, резные детали)
-const t_assembly_part magic_bench_parts[] = {
+const static t_assembly_part magic_bench_parts[] = {
   { .part_id = PART_MAGIC_LEG,             .x = 10, .y = 100 },
   { .part_id = PART_MAGIC_LEG,             .x = 30, .y = 120 },
   { .part_id = PART_MAGIC_SEAT,            .x = 20, .y = 110 },
@@ -380,7 +381,7 @@ const t_assembly_part magic_bench_parts[] = {
 };
 
 // Домик для кота (пол, стенки, крыша, окно)
-const t_assembly_part cat_house_parts[] = {
+const static t_assembly_part cat_house_parts[] = {
   { .part_id = PART_CAT_FLOOR,           .x = 20, .y = 100 },
   { .part_id = PART_CAT_WALL_LEFT,       .x = 20, .y = 80 },
   { .part_id = PART_CAT_WALL_RIGHT,      .x = 20, .y = 120 },
@@ -390,7 +391,7 @@ const t_assembly_part cat_house_parts[] = {
 };
 
 // Кровать с балдахином (каркасы, доски, опоры, балдахин)
-const t_assembly_part canopied_bed_parts[] = {
+const static t_assembly_part canopied_bed_parts[] = {
   { .part_id = PART_CANOPIED_FRAME_LEFT,        .x = 10, .y = 50 },
   { .part_id = PART_CANOPIED_FRAME_RIGHT,       .x = 150, .y = 50 },
   { .part_id = PART_CANOPIED_HEADBOARD,         .x = 80, .y = 30 },
