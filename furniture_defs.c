@@ -281,3 +281,188 @@ const t_part available_parts[NUM_PARTS] = {
     .type = PART_CANOPY
   }
 };
+
+// Определим детали для каждой схемы
+
+// Простой деревянный стул (4 ножки, сидение, спинка)
+const t_assembly_part simple_chair_parts[] = {
+  { .part_id = PART_SIMPLE_WOODEN_LEG,    .x = 10, .y = 100 },
+  { .part_id = PART_SIMPLE_WOODEN_LEG,    .x = 30, .y = 100 },
+  { .part_id = PART_SIMPLE_WOODEN_LEG,    .x = 10, .y = 120 },
+  { .part_id = PART_SIMPLE_WOODEN_LEG,    .x = 30, .y = 120 },
+  { .part_id = PART_SIMPLE_WOODEN_SEAT,   .x = 20, .y = 90 },
+  { .part_id = PART_SIMPLE_WOODEN_BACK,   .x = 20, .y = 70 }
+};
+
+// Стул с мягким сидением и обивкой (4 ножки, твёрдое сидение, мягкая подушка, твёрдая спинка, мягкая подушка)
+const t_assembly_part cushioned_chair_parts[] = {
+  { .part_id = PART_OFFICE_WOODEN_LEG,        .x = 10, .y = 100 },
+  { .part_id = PART_OFFICE_WOODEN_LEG,        .x = 30, .y = 100 },
+  { .part_id = PART_OFFICE_WOODEN_LEG,        .x = 10, .y = 120 },
+  { .part_id = PART_OFFICE_WOODEN_LEG,        .x = 30, .y = 120 },
+  { .part_id = PART_OFFICE_HARD_SEAT,         .x = 20, .y = 90 },
+  { .part_id = PART_OFFICE_CUSHION_SEAT,      .x = 20, .y = 90 },
+  { .part_id = PART_OFFICE_HARD_BACK,         .x = 20, .y = 70 },
+  { .part_id = PART_OFFICE_CUSHION_BACK,      .x = 20, .y = 70 }
+};
+
+// Прочный деревянный табурет (4 ножки, верхняя плита)
+const t_assembly_part sturdy_stool_parts[] = {
+  { .part_id = PART_STURDY_WOODEN_LEG,    .x = 10, .y = 100 },
+  { .part_id = PART_STURDY_WOODEN_LEG,    .x = 30, .y = 100 },
+  { .part_id = PART_STURDY_WOODEN_LEG,    .x = 10, .y = 120 },
+  { .part_id = PART_STURDY_WOODEN_LEG,    .x = 30, .y = 120 },
+  { .part_id = PART_STURDY_TOP_PLATE,     .x = 20, .y = 90 }
+};
+
+// Классический офисный стул (на 4 стула: по 9 частей каждый — но здесь один экземпляр)
+const t_assembly_part office_chair_parts[] = {
+  { .part_id = PART_OFFICE_WOODEN_LEG,       .x = 10, .y = 100 },
+  { .part_id = PART_OFFICE_WOODEN_LEG,       .x = 30, .y = 100 },
+  { .part_id = PART_OFFICE_WOODEN_LEG,       .x = 10, .y = 120 },
+  { .part_id = PART_OFFICE_WOODEN_LEG,       .x = 30, .y = 120 },
+  { .part_id = PART_OFFICE_HARD_SEAT,        .x = 20, .y = 90 },
+  { .part_id = PART_OFFICE_CUSHION_SEAT,     .x = 20, .y = 90 },
+  { .part_id = PART_OFFICE_HARD_BACK,        .x = 20, .y = 70 },
+  { .part_id = PART_OFFICE_CUSHION_BACK,     .x = 20, .y = 70 },
+  { .part_id = PART_OFFICE_UPHOLSTERY,       .x = 20, .y = 70 }
+};
+
+// Резная кровать (каркас слева/справа, изголовье, изножье, основание, резные украшения)
+const t_assembly_part artistic_bed_parts[] = {
+  { .part_id = PART_ARTISTIC_FRAME_LEFT,        .x = 10, .y = 50 },
+  { .part_id = PART_ARTISTIC_FRAME_RIGHT,       .x = 150, .y = 50 },
+  { .part_id = PART_ARTISTIC_HEADBOARD,         .x = 80, .y = 30 },
+  { .part_id = PART_ARTISTIC_FOOTBOARD,         .x = 80, .y = 150 },
+  { .part_id = PART_ARTISTIC_BASE_BOARD,        .x = 80, .y = 100 },
+  { .part_id = PART_ARTISTIC_CARVED_DECORATION, .x = 60, .y = 40 },
+  { .part_id = PART_ARTISTIC_CARVED_DECORATION, .x = 100, .y = 40 },
+  { .part_id = PART_ARTISTIC_CARVED_DECORATION, .x = 60, .y = 140 },
+  { .part_id = PART_ARTISTIC_CARVED_DECORATION, .x = 100, .y = 140 }
+};
+
+// Детский стульчик (4 ножки, сиденье, спинка, защитные уголки)
+const t_assembly_part child_chair_parts[] = {
+  { .part_id = PART_CHILD_LEG,           .x = 10, .y = 100 },
+  { .part_id = PART_CHILD_LEG,           .x = 30, .y = 100 },
+  { .part_id = PART_CHILD_LEG,           .x = 10, .y = 120 },
+  { .part_id = PART_CHILD_LEG,           .x = 30, .y = 120 },
+  { .part_id = PART_CHILD_SEAT,          .x = 20, .y = 90 },
+  { .part_id = PART_CHILD_BACK,          .x = 20, .y = 70 },
+  { .part_id = PART_CHILD_CORNER_GUARD,  .x = 10, .y = 90 },
+  { .part_id = PART_CHILD_CORNER_GUARD,  .x = 30, .y = 90 },
+  { .part_id = PART_CHILD_CORNER_GUARD,  .x = 10, .y = 120 },
+  { .part_id = PART_CHILD_CORNER_GUARD,  .x = 30, .y = 120 }
+};
+
+// Стул с подлокотниками (4 ножки, сиденье, спинка, подлокотники)
+const t_assembly_part elegant_armchair_parts[] = {
+  { .part_id = PART_ELEGANT_LEG,         .x = 10, .y = 100 },
+  { .part_id = PART_ELEGANT_LEG,         .x = 30, .y = 100 },
+  { .part_id = PART_ELEGANT_LEG,         .x = 10, .y = 120 },
+  { .part_id = PART_ELEGANT_LEG,         .x = 30, .y = 120 },
+  { .part_id = PART_ELEGANT_SEAT,        .x = 20, .y = 90 },
+  { .part_id = PART_ELEGANT_BACK,        .x = 20, .y = 70 },
+  { .part_id = PART_ELEGANT_ARMREST,     .x = 10, .y = 90 },
+  { .part_id = PART_ELEGANT_ARMREST,     .x = 30, .y = 90 }
+};
+
+// Магическая скамья (2 ножки, сиденье, спинка, резные детали)
+const t_assembly_part magic_bench_parts[] = {
+  { .part_id = PART_MAGIC_LEG,             .x = 10, .y = 100 },
+  { .part_id = PART_MAGIC_LEG,             .x = 30, .y = 120 },
+  { .part_id = PART_MAGIC_SEAT,            .x = 20, .y = 110 },
+  { .part_id = PART_MAGIC_BACK,            .x = 20, .y = 90 },
+  { .part_id = PART_MAGIC_CARVED_DETAIL,   .x = 15, .y = 100 },
+  { .part_id = PART_MAGIC_CARVED_DETAIL,   .x = 25, .y = 100 },
+  { .part_id = PART_MAGIC_CARVED_DETAIL,   .x = 15, .y = 120 },
+  { .part_id = PART_MAGIC_CARVED_DETAIL,   .x = 25, .y = 120 }
+};
+
+// Домик для кота (пол, стенки, крыша, окно)
+const t_assembly_part cat_house_parts[] = {
+  { .part_id = PART_CAT_FLOOR,           .x = 20, .y = 100 },
+  { .part_id = PART_CAT_WALL_LEFT,       .x = 20, .y = 80 },
+  { .part_id = PART_CAT_WALL_RIGHT,      .x = 20, .y = 120 },
+  { .part_id = PART_CAT_WALL_BACK,       .x = 20, .y = 60 },
+  { .part_id = PART_CAT_ROOF,            .x = 20, .y = 50 },
+  { .part_id = PART_CAT_WINDOW,          .x = 20, .y = 90 }
+};
+
+// Кровать с балдахином (каркасы, доски, опоры, балдахин)
+const t_assembly_part canopied_bed_parts[] = {
+  { .part_id = PART_CANOPIED_FRAME_LEFT,        .x = 10, .y = 50 },
+  { .part_id = PART_CANOPIED_FRAME_RIGHT,       .x = 150, .y = 50 },
+  { .part_id = PART_CANOPIED_HEADBOARD,         .x = 80, .y = 30 },
+  { .part_id = PART_CANOPIED_FOOTBOARD,         .x = 80, .y = 150 },
+  { .part_id = PART_CANOPIED_BASE_BOARD,        .x = 80, .y = 100 },
+  { .part_id = PART_CANOPIED_VERTICAL_SUPPORT,  .x = 40, .y = 60 },
+  { .part_id = PART_CANOPIED_VERTICAL_SUPPORT,  .x = 60, .y = 60 },
+  { .part_id = PART_CANOPIED_VERTICAL_SUPPORT,  .x = 100, .y = 60 },
+  { .part_id = PART_CANOPIED_VERTICAL_SUPPORT,  .x = 120, .y = 60 },
+  { .part_id = PART_CANOPIED_CANOPY,           .x = 80, .y = 20 }
+};
+
+// Описание всех схем изделий
+const t_furniture_scheme furniture_schemes[NUM_SCHEMES] = {
+  [SCHEME_SIMPLE_CHAIR] = {
+    .name = "Простой деревянный стул",
+    .style = STYLE_SIMPLE,
+    .required_parts_count = 6,
+    .parts = simple_chair_parts
+  },
+  [SCHEME_CUSHIONED_CHAIR] = {
+    .name = "Стул с мягким сидением и обивкой",
+    .style = STYLE_COMFORT,
+    .required_parts_count = 8,
+    .parts = cushioned_chair_parts
+  },
+  [SCHEME_STURDY_STOOL] = {
+    .name = "Прочный деревянный табурет",
+    .style = STYLE_STURDY,
+    .required_parts_count = 5,
+    .parts = sturdy_stool_parts
+  },
+  [SCHEME_OFFICE_CHAIR] = {
+    .name = "Классический офисный стул",
+    .style = STYLE_OFFICE,
+    .required_parts_count = 9,
+    .parts = office_chair_parts
+  },
+  [SCHEME_ARTISTIC_BED] = {
+    .name = "Резная кровать",
+    .style = STYLE_ARTISTIC,
+    .required_parts_count = 9,
+    .parts = artistic_bed_parts
+  },
+  [SCHEME_CHILD_CHAIR] = {
+    .name = "Детский стульчик",
+    .style = STYLE_CHILD_FRIENDLY,
+    .required_parts_count = 10,
+    .parts = child_chair_parts
+  },
+  [SCHEME_ELEGANT_ARMCHAIR] = {
+    .name = "Стул с подлокотниками",
+    .style = STYLE_ELEGANT,
+    .required_parts_count = 8,
+    .parts = elegant_armchair_parts
+  },
+  [SCHEME_MAGIC_BENCH] = {
+    .name = "Магическая скамья",
+    .style = STYLE_MAGIC,
+    .required_parts_count = 8,
+    .parts = magic_bench_parts
+  },
+  [SCHEME_CAT_HOUSE] = {
+    .name = "Домик для кота",
+    .style = STYLE_CAT_FRIENDLY,
+    .required_parts_count = 6,
+    .parts = cat_house_parts
+  },
+  [SCHEME_CANOPIED_BED] = {
+    .name = "Кровать с балдахином",
+    .style = STYLE_ELEGANT,
+    .required_parts_count = 10,
+    .parts = canopied_bed_parts
+  }
+};
