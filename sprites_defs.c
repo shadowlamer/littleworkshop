@@ -10,7 +10,7 @@ const t_sprite sprites[NUM_SPRITES] = {
   [SPRITE_SIMPLE_WOODEN_BACK] = {
     .width = 2, .height = 4, .data = sprite_simple_wooden_back 
   },
-  [SPRITE_CUSHION_SEAT] = {
+  [SPRITE_CUSHIONED_SEAT] = {
     .width = 4, .height = 2, .data = sprite_cushion_seat 
   },
 };
