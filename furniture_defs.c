@@ -15,13 +15,15 @@ const t_part available_parts[NUM_PARTS] = {
     .name = "простая деревянная спинка",
     .material = MAT_WOOD,
     .style = STYLE_SIMPLE,
-    .type = PART_BACK
+    .type = PART_BACK,
+    .sprite = SPRITE_SIMPLE_WOODEN_BACK  
   },
   [PART_SIMPLE_WOODEN_SEAT] = {
     .name = "простое деревянное сидение",
     .material = MAT_WOOD,
     .style = STYLE_SIMPLE,
-    .type = PART_SEAT
+    .type = PART_SEAT,
+    .sprite = SPRITE_SIMPLE_WOODEN_SEAT  
   },
   [PART_CUSHIONED_SEAT] = {
     .name = "мягкая подушка на сидение",
@@ -287,12 +289,12 @@ const t_part available_parts[NUM_PARTS] = {
 
 // Простой деревянный стул (4 ножки, сидение, спинка)
 const t_assembly_part simple_chair_parts[] = {
-  { .part_id = PART_SIMPLE_WOODEN_LEG,    .x = 10, .y = 100 },
-  { .part_id = PART_SIMPLE_WOODEN_LEG,    .x = 30, .y = 100 },
-  { .part_id = PART_SIMPLE_WOODEN_LEG,    .x = 10, .y = 120 },
-  { .part_id = PART_SIMPLE_WOODEN_LEG,    .x = 30, .y = 120 },
-  { .part_id = PART_SIMPLE_WOODEN_SEAT,   .x = 20, .y = 90 },
-  { .part_id = PART_SIMPLE_WOODEN_BACK,   .x = 20, .y = 70 }
+  { .part_id = PART_SIMPLE_WOODEN_LEG,    .x = 8, .y = 35 },
+  { .part_id = PART_SIMPLE_WOODEN_LEG,    .x = 18, .y = 35 },
+  { .part_id = PART_SIMPLE_WOODEN_LEG,    .x = 4, .y = 40 },
+  { .part_id = PART_SIMPLE_WOODEN_LEG,    .x = 15, .y = 40 },
+  { .part_id = PART_SIMPLE_WOODEN_SEAT,   .x = 2, .y = 24 },
+  { .part_id = PART_SIMPLE_WOODEN_BACK,   .x = 8, .y = 00 }
 };
 
 // Стул с мягким сидением и обивкой (4 ножки, твёрдое сидение, мягкая подушка, твёрдая спинка, мягкая подушка)

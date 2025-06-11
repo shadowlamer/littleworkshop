@@ -165,6 +165,7 @@ typedef enum {
   NUM_SCHEMES                         // Общее количество схем
 } t_furniture_scheme_id;
 
+extern const t_part available_parts[NUM_PARTS];
 extern const t_furniture_scheme furniture_schemes[NUM_SCHEMES];
 
 #endif // FURNITURE_DEFS_H
