@@ -9,6 +9,9 @@
 #include "sprite_engine.h"
 //#link "sprite_engine.c"
 
+#include "visitor_defs.h"
+//#link "visitor_defs.c"
+
 
 void draw_furniture(t_furniture_scheme_id scheme_id);
 
