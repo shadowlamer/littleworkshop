@@ -12,11 +12,15 @@
 #include "visitor_defs.h"
 //#link "visitor_defs.c"
 
+#include "font.h"
+#include "io.h"
+//#link "io.c"
 
 void draw_furniture(t_furniture_scheme_id scheme_id);
 
 void main() {
   draw_furniture(SCHEME_SIMPLE_CHAIR);
+  print("Привет\\!", 0, 10);
   while (1);
 }
 
