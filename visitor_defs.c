@@ -1,4 +1,5 @@
 #include "visitor_defs.h"
+#include "tools.h"
 
 #define NUM_CATCH_PHRASES_PER_CHARACTER 3
 #define NUM_ACCESSOIRES 3
@@ -77,13 +78,6 @@ const static t_sprite_id character_portraits[NUM_CHARACTER_TYPES] = {
   [CHARACTER_ARCHITECT] = SPRITE_PORTRAIT_ARCHITECT,
   [CHARACTER_WIZARD] = SPRITE_PORTRAIT_WIZARD
 };
-
-// Генератор случайного числа (простой)
-uint8_t random_upto(uint8_t max) {
-    static uint8_t seed = 0xAB;
-    seed = (seed * 0x19) + 0x3D;
-    return seed % max;
-}
 
 void generate_visitor_profile(t_visitor_profile *p_profile,t_character_type character_type) {
   p_profile->type = character_type;

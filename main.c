@@ -16,11 +16,20 @@
 #include "io.h"
 //#link "io.c"
 
-void draw_furniture(t_furniture_scheme_id scheme_id);
+#include "orders.h"
+//#link "orders.c"
 
+#include "tools.h"
+//#link "tools.c"
+
+
+void draw_furniture(t_furniture_scheme_id scheme_id);
+void render_order(t_order *order);
+  
 void main() {
-  draw_furniture(SCHEME_SIMPLE_CHAIR);
-  print("Привет\\!", 0, 10);
+  t_order test_order;
+  generate_order(&test_order);
+  render_order(&test_order);
   while (1);
 }
 
@@ -49,4 +58,12 @@ void draw_furniture(t_furniture_scheme_id scheme_id) {
     draw_sprite(sprite_id, assembly_part->x, assembly_part->y);
   }
 }
+
+void render_order(t_order *order) {
+  draw_furniture(order->furniture_scheme_id);
+  draw_simple_sprite(order->visitor.portrait, 10, 10);
+  print((char*)order->furniture_scheme->name, 10, 10);
+  print(order->visitor.catch_phrase, 10, 11);
+}
+
 

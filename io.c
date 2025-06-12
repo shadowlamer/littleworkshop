@@ -1,4 +1,5 @@
 #include "io.h"
+#include "stdint.h"
 
 void delay(unsigned int interval) {
   for (;--interval > 0;) {
@@ -9,7 +10,10 @@ void delay(unsigned int interval) {
   }
 }
 
-void print(char *message, unsigned char x, unsigned char y) {
+void print(char *message, uint8_t start_x, uint8_t start_y) {
+  uint8_t x = start_x;
+  uint8_t y = start_y;
+  
   char *p_scr;
   char const *p_font;
 
@@ -21,12 +25,12 @@ void print(char *message, unsigned char x, unsigned char y) {
     
     if (*message == '\n') {
       y++;
-      x = 0;
+      x = start_x;
       continue;
     }
+
     
-    if (*message == '\\') {
-      message++;
+    if (*message >= 0x20 && *message <= 0x2f) {
       s = *message - ' ';
     } else {
       s = *message;
