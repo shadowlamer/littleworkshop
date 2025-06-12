@@ -17,6 +17,15 @@ typedef enum {
   NUM_CHARACTER_TYPES
 } t_character_type;
 
+// Части портрета
+typedef enum {
+  ACC_NOSE,
+  ACC_MOUTH,
+  ACC_EYES,
+  ACC_HAIR,
+  NUM_ACCESSOIRE_TYPES
+} t_accessoire_type;
+
 typedef struct {
   t_sprite_id background;
   t_sprite_id face;

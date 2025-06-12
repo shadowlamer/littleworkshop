@@ -1,6 +1,7 @@
 #include "visitor_defs.h"
 
 #define NUM_CATCH_PHRASES_PER_CHARACTER 3
+#define NUM_ACCESSOIRES 3
 
 // Имена персонажей
 const static const char *character_titles[NUM_CHARACTER_TYPES] = {
@@ -77,6 +78,41 @@ const static t_sprite_id backgrounds[NUM_CHARACTER_TYPES] = {
   [CHARACTER_MAGIC_OLD_MAN] = SPRITE_BG_CASTLE
 };
 
+// Одежда по типу посетителя (спрайты)
+const t_sprite_id cloth[NUM_CHARACTER_TYPES] = {
+    [CHARACTER_FARMER]        = SPRITE_CLOTH_WORK_JACKET,
+    [CHARACTER_GIRL]          = SPRITE_CLOTH_DRESS,
+    [CHARACTER_FISHERMAN]     = SPRITE_CLOTH_SAILOR_COAT,
+    [CHARACTER_BUSINESSMAN]   = SPRITE_CLOTH_SUIT,
+    [CHARACTER_ARTIST]        = SPRITE_CLOTH_PAINTED_SHIRT,
+    [CHARACTER_MOM]           = SPRITE_CLOTH_TSHIRT,
+    [CHARACTER_OLD_LADY]      = SPRITE_CLOTH_SHAWL,
+    [CHARACTER_ARCHITECT]     = SPRITE_CLOTH_ENGINEER_JACKET,
+    [CHARACTER_MAGIC_OLD_MAN] = SPRITE_CLOTH_ROBE
+};
+
+const t_sprite_id accessoires [NUM_ACCESSOIRE_TYPES][NUM_ACCESSOIRES] = {
+  [ACC_NOSE] = {
+    SPRITE_NOSE1,
+    SPRITE_NOSE2,
+    SPRITE_NOSE3,
+  },
+  [ACC_MOUTH] = {
+    SPRITE_MOUTH1,
+    SPRITE_MOUTH2,
+    SPRITE_MOUTH3,
+  },
+  [ACC_EYES] = {
+    SPRITE_EYES1,
+    SPRITE_EYES2,
+    SPRITE_EYES3,
+  },
+  [ACC_HAIR] = {
+    SPRITE_HAIR1,
+    SPRITE_HAIR2,
+    SPRITE_HAIR3,
+  },
+};
 
 // Генератор случайного числа (простой)
 uint8_t random_upto(uint8_t max) {
