@@ -13,33 +13,15 @@ typedef enum {
   CHARACTER_MOM,
   CHARACTER_OLD_LADY,
   CHARACTER_ARCHITECT,
-  CHARACTER_MAGIC_OLD_MAN,
+  CHARACTER_WIZARD,
   NUM_CHARACTER_TYPES
 } t_character_type;
 
-// Части портрета
-typedef enum {
-  ACC_NOSE,
-  ACC_MOUTH,
-  ACC_EYES,
-  ACC_HAIR,
-  NUM_ACCESSOIRE_TYPES
-} t_accessoire_type;
-
-typedef struct {
-  t_sprite_id background;
-  t_sprite_id face;
-  t_sprite_id nose; 
-  t_sprite_id eyes;
-  t_sprite_id glasses;
-  t_sprite_id hat;
-  t_sprite_id cloth;
-} t_portrait;
 
 typedef struct {
   char *name;
   t_character_type type;
-  t_portrait portrait;
+  t_sprite_id portrait;
   char *catch_phrase;
 } t_visitor_profile;
 

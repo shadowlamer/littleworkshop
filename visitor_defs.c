@@ -13,7 +13,7 @@ const static const char *character_titles[NUM_CHARACTER_TYPES] = {
   [CHARACTER_MOM] = "Мама с ребёнком",
   [CHARACTER_OLD_LADY] = "Пожилая женщина",
   [CHARACTER_ARCHITECT] = "Архитектор",
-  [CHARACTER_MAGIC_OLD_MAN] = "Старый чародей"
+  [CHARACTER_WIZARD] = "Старый чародей"
 };
 
 // Фразы для каждого типа персонажа
@@ -58,7 +58,7 @@ static const char *catch_phrases[NUM_CHARACTER_TYPES][NUM_CATCH_PHRASES_PER_CHAR
     "Я разбираюсь в формах.",
     "Дизайн должен быть идеальным."
   },
-  [CHARACTER_MAGIC_OLD_MAN] = {
+  [CHARACTER_WIZARD] = {
     "Магия в деталях...",
     "Если ты сделаешь это правильно, получишь награду.",
     "Это не просто мебель..."
@@ -66,52 +66,16 @@ static const char *catch_phrases[NUM_CHARACTER_TYPES][NUM_CATCH_PHRASES_PER_CHAR
 };
 
 // Части портрета (спрайты)
-const static t_sprite_id backgrounds[NUM_CHARACTER_TYPES] = {
-  [CHARACTER_FARMER] = SPRITE_BG_OUTDOOR,
-  [CHARACTER_GIRL] = SPRITE_BG_HOME,
-  [CHARACTER_FISHERMAN] = SPRITE_BG_SHORE,
-  [CHARACTER_BUSINESSMAN] = SPRITE_BG_OFFICE,
-  [CHARACTER_ARTIST] = SPRITE_BG_STUDIO,
-  [CHARACTER_MOM] = SPRITE_BG_KITCHEN,
-  [CHARACTER_OLD_LADY] = SPRITE_BG_PARLOUR,
-  [CHARACTER_ARCHITECT] = SPRITE_BG_DRAWING_ROOM,
-  [CHARACTER_MAGIC_OLD_MAN] = SPRITE_BG_CASTLE
-};
-
-// Одежда по типу посетителя (спрайты)
-const t_sprite_id cloth[NUM_CHARACTER_TYPES] = {
-    [CHARACTER_FARMER]        = SPRITE_CLOTH_WORK_JACKET,
-    [CHARACTER_GIRL]          = SPRITE_CLOTH_DRESS,
-    [CHARACTER_FISHERMAN]     = SPRITE_CLOTH_SAILOR_COAT,
-    [CHARACTER_BUSINESSMAN]   = SPRITE_CLOTH_SUIT,
-    [CHARACTER_ARTIST]        = SPRITE_CLOTH_PAINTED_SHIRT,
-    [CHARACTER_MOM]           = SPRITE_CLOTH_TSHIRT,
-    [CHARACTER_OLD_LADY]      = SPRITE_CLOTH_SHAWL,
-    [CHARACTER_ARCHITECT]     = SPRITE_CLOTH_ENGINEER_JACKET,
-    [CHARACTER_MAGIC_OLD_MAN] = SPRITE_CLOTH_ROBE
-};
-
-const t_sprite_id accessoires [NUM_ACCESSOIRE_TYPES][NUM_ACCESSOIRES] = {
-  [ACC_NOSE] = {
-    SPRITE_NOSE1,
-    SPRITE_NOSE2,
-    SPRITE_NOSE3,
-  },
-  [ACC_MOUTH] = {
-    SPRITE_MOUTH1,
-    SPRITE_MOUTH2,
-    SPRITE_MOUTH3,
-  },
-  [ACC_EYES] = {
-    SPRITE_EYES1,
-    SPRITE_EYES2,
-    SPRITE_EYES3,
-  },
-  [ACC_HAIR] = {
-    SPRITE_HAIR1,
-    SPRITE_HAIR2,
-    SPRITE_HAIR3,
-  },
+const static t_sprite_id character_portraits[NUM_CHARACTER_TYPES] = {
+  [CHARACTER_FARMER] = SPRITE_PORTRAIT_FARMER,
+  [CHARACTER_GIRL] = SPRITE_PORTRAIT_GIRL,
+  [CHARACTER_FISHERMAN] = SPRITE_PORTRAIT_FISHERMAN,
+  [CHARACTER_BUSINESSMAN] = SPRITE_PORTRAIT_BUSINESSMAN,
+  [CHARACTER_ARTIST] = SPRITE_PORTRAIT_ARTIST,
+  [CHARACTER_MOM] = SPRITE_PORTRAIT_MOM,
+  [CHARACTER_OLD_LADY] = SPRITE_PORTRAIT_OLD_LADY,
+  [CHARACTER_ARCHITECT] = SPRITE_PORTRAIT_ARCHITECT,
+  [CHARACTER_WIZARD] = SPRITE_PORTRAIT_WIZARD
 };
 
 // Генератор случайного числа (простой)
@@ -125,6 +89,5 @@ void generate_visitor_profile(t_visitor_profile *p_profile,t_character_type char
   p_profile->type = character_type;
   p_profile->name = (char *)character_titles[character_type];
   p_profile->catch_phrase = (char *)catch_phrases[character_type][random_upto(NUM_CATCH_PHRASES_PER_CHARACTER)];
-  p_profile->portrait.background = backgrounds[0];
+  p_profile->portrait = character_portraits[character_type];
 }
-
