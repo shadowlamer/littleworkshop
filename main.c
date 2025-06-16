@@ -22,15 +22,24 @@
 #include "tools.h"
 //#link "tools.c"
 
+#include "keyboard.h"
+//#link "keyboard.c"
+
+#include <string.h>
 
 void draw_furniture(t_furniture_scheme_id scheme_id);
 void render_order(t_order *order);
-  
+
+void clear_scr_with_attr(uint8_t attr);
+
 void main() {
   t_order test_order;
+  while (1) {
   generate_order(&test_order);
+  clear_scr_with_attr(0b00111000);
   render_order(&test_order);
-  while (1);
+  while (getkey() == 0);
+  }
 }
 
 void draw_furniture(t_furniture_scheme_id scheme_id) {
@@ -66,4 +75,8 @@ void render_order(t_order *order) {
   print(order->visitor.catch_phrase, 10, 11);
 }
 
+void clear_scr_with_attr(uint8_t attr) {
+  memset((uint8_t*)ATTR_SCREEN_BUFFER_START, attr, 32*24);
+  memset((uint8_t*)SCREEN_BUFFER_START, 0x00, 192*32);
+}
 
